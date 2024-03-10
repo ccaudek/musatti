@@ -1,0 +1,389 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  man]{apa6}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{english}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% Manuscript styling
+\usepackage{upgreek}
+\captionsetup{font=singlespacing,justification=justified}
+
+% Table formatting
+\usepackage{longtable}
+\usepackage{lscape}
+% \usepackage[counterclockwise]{rotating}   % Landscape page setup for large tables
+\usepackage{multirow}		% Table styling
+\usepackage{tabularx}		% Control Column width
+\usepackage[flushleft]{threeparttable}	% Allows for three part tables with a specified notes section
+\usepackage{threeparttablex}            % Lets threeparttable work with longtable
+
+% Create new environments so endfloat can handle them
+% \newenvironment{ltable}
+%   {\begin{landscape}\centering\begin{threeparttable}}
+%   {\end{threeparttable}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
+
+% Enables adjusting longtable caption width to table width
+% Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
+\makeatletter
+\newcommand\LastLTentrywidth{1em}
+\newlength\longtablewidth
+\setlength{\longtablewidth}{1in}
+\newcommand{\getlongtablewidth}{\begingroup \ifcsname LT@\roman{LT@tables}\endcsname \global\longtablewidth=0pt \renewcommand{\LT@entry}[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}\@nameuse{LT@\roman{LT@tables}} \fi \endgroup}
+
+% \setlength{\parindent}{0.5in}
+% \setlength{\parskip}{0pt plus 0pt minus 0pt}
+
+% Overwrite redefinition of paragraph and subparagraph by the default LaTeX template
+% See https://github.com/crsh/papaja/issues/292
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries\itshape\typesectitle}}
+
+\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-\z@\relax}%
+  {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+\makeatother
+
+\makeatletter
+\usepackage{etoolbox}
+\patchcmd{\maketitle}
+  {\section{\normalfont\normalsize\abstractname}}
+  {\section*{\normalfont\normalsize\abstractname}}
+  {}{\typeout{Failed to patch abstract.}}
+\patchcmd{\maketitle}
+  {\section{\protect\normalfont{\@title}}}
+  {\section*{\protect\normalfont{\@title}}}
+  {}{\typeout{Failed to patch title.}}
+\makeatother
+
+\usepackage{xpatch}
+\makeatletter
+\xapptocmd\appendix
+  {\xapptocmd\section
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {}{\InnerPatchFailed}%
+  }
+{}{\PatchFailed}
+\keywords{keywords\newline\indent Word count: X}
+\DeclareDelayedFloatFlavor{ThreePartTable}{table}
+\DeclareDelayedFloatFlavor{lltable}{table}
+\DeclareDelayedFloatFlavor*{longtable}{table}
+\makeatletter
+\renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
+\makeatother
+\usepackage{csquotes}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={The title},
+  pdfauthor={First Author1 \& Ernst-August Doelle1,2},
+  pdflang={en-EN},
+  pdfkeywords={keywords},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{The title}
+\author{First Author\textsuperscript{1} \& Ernst-August Doelle\textsuperscript{1,2}}
+\date{}
+
+
+\shorttitle{Title}
+
+\authornote{
+
+Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
+
+Enter author note here.
+
+The authors made the following contributions. First Author: Conceptualization, Writing - Original Draft Preparation, Writing - Review \& Editing; Ernst-August Doelle: Writing - Review \& Editing, Supervision.
+
+Correspondence concerning this article should be addressed to First Author, Postal address. E-mail: \href{mailto:my@email.com}{\nolinkurl{my@email.com}}
+
+}
+
+\affiliation{\vspace{0.5cm}\textsuperscript{1} Wilhelm-Wundt-University\\\textsuperscript{2} Konstanz Business School}
+
+\abstract{%
+One or two sentences providing a \textbf{basic introduction} to the field, comprehensible to a scientist in any discipline.
+Two to three sentences of \textbf{more detailed background}, comprehensible to scientists in related disciplines.
+One sentence clearly stating the \textbf{general problem} being addressed by this particular study.
+One sentence summarizing the main result (with the words ``\textbf{here we show}'' or their equivalent).
+Two or three sentences explaining what the \textbf{main result} reveals in direct comparison to what was thought to be the case previously, or how the main result adds to previous knowledge.
+One or two sentences to put the results into a more \textbf{general context}.
+Two or three sentences to provide a \textbf{broader perspective}, readily comprehensible to a scientist in any discipline.
+}
+
+
+
+\begin{document}
+\maketitle
+
+\subsection{Introduzione}\label{introduzione}
+
+Il sistema visivo umano (e, in generale, biologico) deve ricostruire la forma tridimensionale dell'ambiente a partire dall'informazione sensoriale. Ci sono tanti ``indizi'' sensoriali che forniscono informazioni sulla forma 3D dell'ambiente e del movimento relativo tra l'ambiente e l'osservatore. Inoltre, l'ambiente non è rigido, ma si deforma (cambia forma) nel tempo, il che rappresenta un'ulteriore complicazione. Un modo per leggere il fenomeno stereocinetico di cui ci occupiamo qui è di pensare che esso isoli uno specifico ``indizio'' di profondità che può essere utile per il sistema visivo per ricostruire la forma 3D degli oggetti. Proffitt, Rock, Hecht, and Schubert (1992) e Caudek and Proffitt (1993) hanno mostrato che, infatti, lo stimolo che suscita l'effetto stereocinetico (i cerchi quasi concentrici che ruotano rigidamente sul piano) forniscono un sottoinsieme delle informazioni che verrebbero fornite dalla proiezione polare ``corretta'' (ovvero, completa) di un oggetto rigido, ovvero un cono, con degli anelli dipinti sulla sua superfice, che oscilla in relazione ad un osservatore (o viceversa). L'articolo seminale di Musatti (1924) si pone il problema di come spiegare, in termini di un modello ``di proiezione inversa'' il percetto che questo stimolo suscita. La proposta specifica fornita da Musatti (1924) per ``spiegare'' questo fenomeno percettivo ha un iteresse più che altro storico. Invece, ciò che ancora suscita il nostro interesse, non sono tanto le caratteristiche specifiche del modello geometrico che Musatti (1924) propone, quanto il problema che Musatti solleva. Il problema è il seguente: come è possibile per un osservatore percepire un oggetto tridimensionale con caratteristiche molto ben definite e abbastanza costanti tra osservatori diversi, sulla base di questo stimolo? Il problema potrebbe sembrare di poco interesse: ``è solo un'illusione (in realtà, quello che succede è che c'è un pattern bidimensionale che ruota rispetto all'osservatore). Nel mondo naturale queste cose non succedono, quindi non c'è nulla da spiegare.'' Questa spiegazione, però, è troppo affrettata e, in realtà, gli stimoli stereocinetici di Duchamp e di Benussi sono degli oggetti fisici presenti nel mondo empirico (non sono solo delle ``illusioni'' che sperimentiamo soltanto nei sogni o quando il nostro sistema cognitivo è in qualche modo alterato). Pertanto, una teoria che vuole spiegare come funziona il sistema visivo non può ignorarli. In questo articolo mostreremo come, in realtà, è stato proprio così: questi fenomeni, e il ``problema'' che Musatti (1924) ha posto, sono stati \emph{ignorati}. E questo è un problema che ci accompagna. Questi fenomeni ``illusori'' sono stati ignorati dalla teoria dominante perché tale teoria non riusciva a spiegarli. Il punto è che, ignorando tali fenomeni, la teoria dominante (che qui chiameremo il Modello Standard) si è condannata a non riscire a spiegare né i fenomeni che intendeva ignorare, né i fenomeni (tutto il resto) che in realtà intendeva spiegare. Questa è la ``lezione'' che questo breve articolo vuole suggerire e che dimostra quanto sia ancora attuale il ``problema'' che Musatti (1924) ha sollevato. Ma per articolare questa ``lezione'' è necessario entrare nei dettagli. Il diavolo, sempre, si nasconde nei dettagli.
+
+\subsection{Perché l'effetto stereocinetico è importante?}\label{perchuxe9-leffetto-stereocinetico-uxe8-importante}
+
+lo stimolo stereocinetico si distingue da una proiezione polare ideale, generata dal movimento relativo tra un osservatore e un cono, poiché, a livello locale e istantaneo sulla retina, esso fornisce informazioni esclusivamente riguardanti il campo di velocità, omettendo dettagli sulle accelerazioni. Secondo la terminologia introdotta da James J. Gibson, ciò significa che il flusso ottico derivante da tale stimolo include dati relativi alle velocità relative degli oggetti nello spazio, ma non incorpora informazioni sulle loro accelerazioni.
+
+Se le informazioni sull'accelerazione fossero presenti, utilizzando principi di ``geometria inversa'', sarebbe teoricamente possibile ricostruire la forma tridimensionale dell'oggetto distale con un determinato grado di precisione, a meno di un fattore di scala indeterminato. L'assenza di dati relativi alle accelerazioni implica che la configurazione tridimensionale dell'oggetto viene definita in termini affini, il che significa che essa è conciliabile con un'infinità di possibili oggetti distali che variano nella profondità z da 0 a infinito. Tuttavia, questo non corrisponde a ciò che effettivamente gli osservatori percepiscono. Gli osservatori riportano una profondità ben determinata, non ``indederminata''. La discrepanza tra l'informazione visiva fornita dallo stimolo stereocinetico e la percezione tridimensionale che suscita solleva dunque questioni fondamentali sulla natura dei meccanismi attraverso i quali il sistema visivo interpreta e integra le informazioni di velocità senza dati espliciti sull'accelerazione.
+
+\subsection{Come risolvere il paradosso?}\label{come-risolvere-il-paradosso}
+
+Ci sono state due ``scuole'' di pensiero a riguardo. La prima è già stata descritta. Il problema si ignora e quindi scompare. Ci concentreremo qui sul secondo punto di vista. In una serie di lavori, Caudek e Domini hanno mostrato come sia una pessima idea proporre che i fenomeni stereocinetici siano delle ``illusioni'' che non hanno nulla a che fare con il modo in cui il sistema visivo elabora le informazioni ``serie'' (non quelle illusorie da laboratorio psicologico), ovvero quelle fornite nel mondo visivo naturale. È una pessima idea pensare questo perché si possono mostrare tre cose: (1) la profondità percepita (e la rotazione percepita) che vengono riportate dagli osservatori nel fenomeno stereocinetico sono molto ben predicibili con un modello che si basa sull'informazione disponibile (come aveva fatto Musatti (1924)); (2) lo stesso modello spiega anche molto bene le percezioni che gli osservatori riportano quanto tutte le informazioni sono disponibili (e, quindi, quando in principio una soluzione ``corretta'' è possibile in base alla geometria inversa); (3) il modello usato per i fenomeni stereocinetici ben predice ``le distrosioni sistematiche'' che gli osservatori manifestano ``in condizioni di visione naturali'' (lasciamo da parte gli effetti stereocinetici), qualcosa che il Modello Standard non è in grado di fare. Per il principio del rasio di Ockam, dunque, sembra che il Modello Standard sia in difficoltà. Ma così non è. E questa è la lezione più importante che nasce da questa ``rivisitazione'' di ``un'illusione percettiva'' che potrebbe sembrare avere un interesse solo ``storico'' -- ma che in realtà è ben altro.
+
+\subsection{Il modello alternativo}\label{il-modello-alternativo}
+
+Iniziamo ad esplorare in dettaglio e a fornire qui una spiegazione del modello proposto da Caudek e Domini per risolvere l'apparente paradosso del fenomeno stereocinetico. Le informazioni retiniche offerte dagli stimoli stereocinetici si configurano come un ``campo di velocità'' istantaneo. Se analizzato localmente, può essere inteso come la somma di quattro variazioni elementari. Due di queste influenzano unicamente l'orientamento (`curl') e la dimensione (`div') di una ``patch'' proiettata; le altre due modificano la forma della proiezione bidimensionale e sono perciò denominate \texttt{shear}. Le due componenti di \texttt{shear} rappresentano le uniche trasformazioni dell'immagine che forniscono informazioni sulla forma tridimensionale e possono essere riassunte in un'unica grandezza denominata \texttt{def} (Domini \& Caudek, 2003). Reiteriamo qui: la grandezza denominata ``def'' specifica, in termini locali, la configurazione affine dell'oggetto distale. Pertanto, essa non descrive la forma euclidea dell'oggetto. Questa distinzione è cruciale per comprendere che, attraverso ``def'', otteniamo un'indicazione sulla struttura dell'oggetto che si basa su trasformazioni geometriche affine, le quali mantengono i punti, le rette e i piani, ma possono alterare le distanze e gli angoli, differendo quindi dalla descrizione euclidea che preserva le distanze e le proprietà metriche degli oggetti.
+
+Esiste una relazione specifica tra la grandezza ``def'' e le proprietà della superficie distale locale che si intende ricostruire attraverso la geometria inversa: \(def = \sigma \times \omega\), dove \(\sigma\) rappresenta l'orientamento locale istantaneo della superficie distale e \(\omega\) indica la quantità di rotazione istantanea di tale superficie. I parametri \(\sigma\) e \(\omega\) rappresentano le variabili incognite a livello distale, mentre ``def'' agisce come lo stimolo a livello prossimale. La questione emergente è: come è possibile determinare i valori di \(\sigma\) e \(\omega\) a partire dalla conoscenza di ``def''? La soluzione diretta attraverso la geometria inversa non è praticabile, in quanto \(\sigma\) e \(\omega\) appartengono a una famiglia di soluzioni possibili caratterizzata da un unico parametro. Questo sottolinea la difficoltà nel dedurre le proprietà tridimensionali specifiche della superficie distale basandosi unicamente sulle informazioni fornite da ``def''.
+
+Domini and Caudek (2003) hanno proposto una soluzione ``Bayesiana'': il sistema visivo sceglie i valori \(\hat{\sigma}\) e \(\hat{\omega}\) che hanno la plausibilità maggiore, data l'informazione fornita da \(def\). Ci vogliono delle informazioni a priori. Nella proposta di Domini and Caudek (2003), si assumono distribuzioni a priori uniformi per \(\sigma\) e \(\omega\). In tali circostanze, il valore più plausibile per entrambi i parametri è uguale a \(\sqrt{def}\).
+
+È facile fare una simulazione in Python che illustra questo punto. Simuliamo 100 valori \(def\) prodotti da valori ``ragionevoli'' dei parametri \(\sigma\) e \(\omega\). Aggiungiamo una leggera perturbazione alla ``misurazione'' di \(def\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{N }\OperatorTok{=} \DecValTok{100}
+\NormalTok{sigma\_degress }\OperatorTok{=}\NormalTok{ np.random.uniform(}\DecValTok{10}\NormalTok{, }\DecValTok{80}\NormalTok{, size}\OperatorTok{=}\NormalTok{N)}
+\NormalTok{sigma\_radians }\OperatorTok{=}\NormalTok{ np.deg2rad(sigma\_degress)}
+\NormalTok{omega\_degrees\_per\_second }\OperatorTok{=}\NormalTok{ np.random.uniform(}\DecValTok{0}\NormalTok{, }\DecValTok{180}\NormalTok{, size}\OperatorTok{=}\NormalTok{N)}
+\NormalTok{omega\_radians\_per\_second }\OperatorTok{=}\NormalTok{ np.deg2rad(omega\_degrees\_per\_second)}
+\NormalTok{def\_values }\OperatorTok{=}\NormalTok{ sigma\_radians }\OperatorTok{*}\NormalTok{ omega\_radians\_per\_second}
+\NormalTok{noise\_std\_dev }\OperatorTok{=} \FloatTok{0.1}
+\NormalTok{def\_values\_perturbed }\OperatorTok{=}\NormalTok{ def\_values }\OperatorTok{+}\NormalTok{ np.random.normal(}\DecValTok{0}\NormalTok{, noise\_std\_dev, def\_values.shape)}
+\end{Highlighting}
+\end{Shaded}
+
+Con i vincoli precedenti, il modello per stimare le distribuzioni a posteriori \(p(\sigma \mid def)\) e \(p(\omega \mid def)\) può essere scritto nel modo seguente in linguaggio Stan.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data \{}
+  \BuiltInTok{int}\OperatorTok{\textless{}}\NormalTok{lower}\OperatorTok{=}\DecValTok{0}\OperatorTok{\textgreater{}}\NormalTok{ N}\OperatorTok{;}         \OperatorTok{//}\NormalTok{ Numero di misurazioni}
+\NormalTok{  vector[N] }\KeywordTok{def}\OperatorTok{;}          \OperatorTok{//}\NormalTok{ Valori di deformazione}
+\NormalTok{\}}
+\NormalTok{parameters \{}
+\NormalTok{  vector}\OperatorTok{\textless{}}\NormalTok{lower}\OperatorTok{=}\DecValTok{0}\NormalTok{, upper}\OperatorTok{=}\DecValTok{1}\OperatorTok{\textgreater{}}\NormalTok{[N] s}\OperatorTok{;}       \OperatorTok{//}\NormalTok{ Slant per ogni misurazione}
+\NormalTok{  vector}\OperatorTok{\textless{}}\NormalTok{lower}\OperatorTok{=}\DecValTok{0}\NormalTok{, upper}\OperatorTok{=}\DecValTok{1}\OperatorTok{\textgreater{}}\NormalTok{[N] omega}\OperatorTok{;}   \OperatorTok{//}\NormalTok{ Velocità di rotazione locale per ogni misurazione}
+\NormalTok{  real}\OperatorTok{\textless{}}\NormalTok{lower}\OperatorTok{=}\DecValTok{0}\OperatorTok{\textgreater{}}\NormalTok{ sigma}\OperatorTok{;}
+\NormalTok{\}}
+\NormalTok{model \{}
+  \OperatorTok{//}\NormalTok{ Priori}
+\NormalTok{  s }\OperatorTok{\textasciitilde{}}\NormalTok{ beta(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)}\OperatorTok{;}
+\NormalTok{  omega }\OperatorTok{\textasciitilde{}}\NormalTok{ beta(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)}\OperatorTok{;}
+
+  \OperatorTok{//}\NormalTok{ Likelihood}
+  \ControlFlowTok{for}\NormalTok{ (i }\KeywordTok{in} \DecValTok{1}\NormalTok{:N) \{}
+    \KeywordTok{def}\NormalTok{[i] }\OperatorTok{\textasciitilde{}}\NormalTok{ normal(s[i] }\OperatorTok{*}\NormalTok{ omega[i], sigma)}\OperatorTok{;} \OperatorTok{//}\NormalTok{ Assumendo una certa varianza sigma}
+\NormalTok{  \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+In questa simulazione, effettuando un'analisi della correlazione tra la media a posteriori dei parametri \(\sigma\) e \(\omega\), calcolata sulla base della deformazione osservata, e il valore di deformazione inizialmente fornito, si ottiene un coefficiente di correlazione pari a 0.95 per entrambi i parametri. Questo risultato conferma quanto proposto da Domini and Caudek (2003), ovvero che \(\sqrt{def}\) agisce come il massimo a posteriori per entrambi i parametri incogniti, in accordo con i priori stabiliti.
+
+Nel corso di diversi studi, Caudek e Domini hanno dimostrato che \(\sqrt{def}\) rappresenta un predittore affidabile della percezione tridimensionale derivata dal movimento, sia in contesti in cui è possibile una ricostruzione euclidea sulla base delle informazioni disponibili, sia in scenari dove è ammissibile soltanto una ricostruzione affine, come nel caso degli effetti stereocinetici.
+
+bla bla un po' di citazioni
+
+\subsection{Una compiaciuta ignoranza}\label{una-compiaciuta-ignoranza}
+
+Passiamo ora al Modello Standard. Il Modello Standard si fonda su un principio concettualmente intuitivo, ancor più diretto rispetto al Modello Alternativo precedentemente discusso. Tale modello si avvale del concetto delle famiglie coniugate normale-normale, una nozione fondamentale nella statistica bayesiana che facilita il calcolo delle distribuzioni a posteriori quando sia la prior che la likelihood sono distribuzioni normali.
+
+Quando si lavora con famiglie coniugate normale-normale, si assume che la prior per un parametro \(\theta\) sia una distribuzione normale con media \(\mu_0\) e varianza \(\sigma_0^2\), e che la likelihood dei dati, dati \(\theta\), sia anch'essa normale con varianza nota \(\sigma^2\), ma con media che dipende da \(\theta\). Questa configurazione permette di esprimere la distribuzione a posteriori di \(\theta\), dati i dati osservati, come una nuova distribuzione normale, la cui media e varianza si calcolano secondo formule specifiche che integrano sia le informazioni a priori sia quelle derivanti dai dati.
+
+La media a posteriori, \(\mu_{post}\), si ottiene come una somma ponderata tra la media della prior, \(\mu_0\), e la media campionaria dei dati, \(\bar{x}\), dove il peso è determinato dalle varianze della prior e dei dati. La formula per la media a posteriori è data da:
+
+\[
+\mu_{post} = \frac{\frac{\sigma^2}{\sigma_0^2} \mu_0 + \frac{\sigma_0^2}{\sigma^2} \bar{x}}{\frac{\sigma^2}{\sigma_0^2} + \frac{\sigma_0^2}{\sigma^2}}
+\]
+
+La varianza a posteriori, \(\sigma_{post}^2\), riflette l'incertezza residua su \(\theta\) dopo aver osservato i dati. Si calcola come l'inverso della somma degli inversi delle varianze della prior e dei dati, ovvero:
+
+\[
+\sigma_{post}^2 = \left(\frac{1}{\sigma_0^2} + \frac{1}{\sigma^2}\right)^{-1}
+\]
+
+Nel contesto del Modello Standard, questi calcoli permettono di aggiornare in modo efficiente le nostre credenze a posteriori su \(\theta\) in seguito all'osservazione di nuovi dati. Nello specifico, il teorema normale-normale è stato utilizzato in questo modo per quel che riguarda la percezione della forma 3D. I prior costituiscono le informazioni sulla forma 3D fornite da un determinato ``cue'' sensoriale -- ad esempio, la ``structure-from-motion''. La likelihood è fornita dalle informazioni fornite da un secondo ``cue'', ad esempio, la stereopsi. La distribuzione a posteriori è il prodotto di questo aggiornamento bayesiano che qui viene chiamato ``cue integration''. Il modello fa delle chiare predizioni sulle proprietà della forma 3D che dovrebbero essere percepite, quando due ``cue'' sono presenti anziché uno solo, come indicato dalle formule precedenti.
+
+Il Modello Standard ammette la possibilità che la percezione tridimensionale emergente dalla presenza di diversi segnali indiziari (o ``cue'') possa non corrispondere fedelmente alla realtà, risultando invece sistematicamente alterata. Secondo questo modello, infatti, la stima a posteriori di una determinata dimensione dello stimolo, ad esempio la profondità, viene calcolata come una media pesata delle stime di quella dimensione ottenute presentando ogni segnale indiziario separatamente. I pesi per questa media sono determinati dall'incertezza, ossia dalla varianza, associata a ciascun segnale indiziario.
+
+Tuttavia, una lacuna del Modello Standard risiede nella mancata specificazione della funzione di likelihood, ovvero nel come la forma tridimensionale viene dedotta dalle informazioni sensoriali. Spesso, il Modello Standard presume, esplicitamente o implicitamente, che la ricostruzione tridimensionale basata su ciascun segnale indiziario separatamente sia accurata. Se così fosse, l'unico errore deriverebbe dal rumore sensoriale nella misurazione dei segnali indiziari.
+
+Questa assunzione, però, è falsa: numerose evidenze suggeriscono che i segnali indiziari sensoriali, quando esaminati isolatamente, portano a ricostruzioni tridimensionali sistematicamente distorte. Di conseguenza, definire con precisione la funzione di likelihood per ciascun segnale indiziario si rivela un compito cruciale, anziché un presupposto scontato. Questa sfida, trascurata dal Modello Standard, è stata invece affrontata dal Modello Alternativo nel suo specifico ambito di applicazione, ovvero nello studio dei fenomeni stereocinetici o, in altre parole, nella struttura derivante dal movimento. Con un pizzico di ironia, si potrebbe sintetizzare affermando che, mentre il Modello Standard presuppone una percezione tridimensionale sempre fedele alla realtà, il Modello Alternativo considera tale percezione come intrinsecamente ``illusoria''.
+
+\subsection{Methods}\label{methods}
+
+--\textgreater{}
+
+\newpage
+
+\section{References}\label{references}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-caudek1993depth}
+Caudek, C., \& Proffitt, D. R. (1993). Depth perception in motion parallax and stereokinesis. \emph{Journal of Experimental Psychology: Human Perception and Performance}, \emph{19}(1), 32--47.
+
+\bibitem[\citeproctext]{ref-domini20033}
+Domini, F., \& Caudek, C. (2003). 3-d structure perceived from dynamic information: A new theory. \emph{Trends in Cognitive Sciences}, \emph{7}(10), 444--449.
+
+\bibitem[\citeproctext]{ref-musatti1924sui}
+Musatti, C. L. (1924). Sui fenomeni stereocinetici. \emph{Archivio Italiano Di Psicologia}, \emph{3}, 105--120.
+
+\bibitem[\citeproctext]{ref-proffitt1992stereokinetic}
+Proffitt, D. R., Rock, I., Hecht, H., \& Schubert, J. (1992). Stereokinetic effect and its relation to the kinetic depth effect. \emph{Journal of Experimental Psychology: Human Perception and Performance}, \emph{18}(1), 3--21.
+
+\end{CSLReferences}
+
+
+\end{document}
